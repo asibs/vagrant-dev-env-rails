@@ -1,0 +1,11 @@
+---
+- block:
+
+  - apt_repository: repo="deb https://cli-assets.heroku.com/branches/stable/apt ./"  state=present
+
+  - copy: src=heroku.gpg.key  dest=/tmp/heroku.gpg.key
+  - apt_key: file=/tmp/heroku.gpg.key  state=present
+
+  - apt: name=heroku  update_cache=yes
+
+  become: yes

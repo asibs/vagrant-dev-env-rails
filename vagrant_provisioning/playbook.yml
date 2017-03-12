@@ -1,0 +1,6 @@
+---
+- hosts: all
+
+  roles:
+  - ruby_on_rails
+  - heroku

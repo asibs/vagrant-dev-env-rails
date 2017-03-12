@@ -1,0 +1,5 @@
+- name: Install Ruby {{ruby_version}}
+  shell: "bash -lc rbenv install {{ruby_version}}"
+
+- name: Set global Ruby version to {{ruby_version}}
+  shell: "bash -lc rbenv global {{ruby_version}}"

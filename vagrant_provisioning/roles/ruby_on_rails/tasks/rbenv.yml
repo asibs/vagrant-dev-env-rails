@@ -1,0 +1,11 @@
+- name: Install rbenv
+  git: repo=https://github.com/rbenv/rbenv.git dest=~{{ansible_user_id}}/.rbenv
+
+- name: Add rbenv to ~{{ansible_user_id}}/.bashrc
+  lineinfile: dest=~{{ansible_user_id}}/.bashrc regexp="rbenv/bin" insertafter=EOF line='export PATH="$HOME/.rbenv/bin:$PATH"' create=yes
+
+- name: Install ruby-build
+  git: repo=https://github.com/rbenv/ruby-build.git dest=~{{ansible_user_id}}/.rbenv/plugins/ruby-build
+
+- name: Add rbenv to ~{{ansible_user_id}}/.bashrc
+  lineinfile: dest=~{{ansible_user_id}}/.bashrc regexp="rbenv/plugins/ruby-build/bin" insertafter=EOF line='export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' create=yes

@@ -1,0 +1,8 @@
+# Ignore everything...
+/*
+
+# Except...
+!.gitignore
+!README.md
+!Vagrantfile
+!vagrant_provisioning/
